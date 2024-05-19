@@ -1,0 +1,62 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #ff4d4d, #ff7300); /* Gradient background */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow for more depth */
+}
+
+.nav-menu a {
+  margin: 0 15px;
+  padding: 10px 20px;
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500; /* Slightly bolder font */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  position: relative; /* For the hover effect */
+  overflow: hidden; /* To contain the hover effect */
+  z-index: 1; /* Ensure the link text stays above the hover effect */
+}
+
+.nav-menu a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: -1; /* Ensure the hover effect is below the link text */
+  transform: translate(-50%, -50%) scale(0); /* Start with a small circle */
+}
+
+.nav-menu a:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Expand to full size on hover */
+}
+
+.nav-menu a:hover {
+  color: #ffffff; /* Ensure text color stays white on hover */
+}
+
+/* Works for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Works for Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
