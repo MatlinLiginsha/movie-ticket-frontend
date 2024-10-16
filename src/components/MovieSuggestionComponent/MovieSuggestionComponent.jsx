@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './MovieSuggestionComponent.css';
 import MovieComponent from '../MovieComponent/MovieComponent';
 import axios from 'axios';
 
@@ -9,7 +8,8 @@ const MovieSuggestionComponent = () => {
     movieGenre2: ''
   });
 
-  const [suggestedMovies, setSuggestedMovies] = useState([])
+  const [suggestedMovies, setSuggestedMovies] = useState([]);
+  const [noMoviesFound, setNoMoviesFound] = useState(false);
 
   const movieGenre1Handler = (event) => {
     setMovieCriteria({
@@ -34,14 +34,20 @@ const MovieSuggestionComponent = () => {
 
     axios
       .post(`http://localhost:3500/api/v1/movie/suggest`, movieCriteria)
-      .then(response => setSuggestedMovies(response.data))
-      .catch((error) => {
-        if(error.response)
-        {
-          alert(`(Status : ${error.response.status}) ${error.response.data.message}`);
+      .then((response) => {
+        if (response.data.length > 0) {
+          setSuggestedMovies(response.data);
+          setNoMoviesFound(false); // Movies found
+        } else {
+          setSuggestedMovies([]);
+          setNoMoviesFound(true); // No movies found
         }
       })
-
+      .catch((error) => {
+        if (error.response) {
+          alert(`(Status : ${error.response.status}) ${error.response.data.message}`);
+        }
+      });
   };
 
   const { movieGenre1, movieGenre2 } = movieCriteria;
@@ -102,9 +108,13 @@ const MovieSuggestionComponent = () => {
       </form>
 
       <div className='suggested-movies'>
-        {suggestedMovies.map((movieItem) => (
-          <MovieComponent key={movieItem.id} movieItem={movieItem} />
-        ))}
+        {noMoviesFound ? (
+          <p>No movies found with the selected genres.</p>
+        ) : (
+          suggestedMovies.map((movieItem) => (
+            <MovieComponent key={movieItem._id} movieItem={movieItem} />
+          ))
+        )}
       </div>
     </>
   );

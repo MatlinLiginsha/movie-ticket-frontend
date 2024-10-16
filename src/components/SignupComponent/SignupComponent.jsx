@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import './SignupComponent.css'
 
 const SignupComponent = () => {
     const [firstName, setFirstName] = useState('')
@@ -45,7 +44,7 @@ const SignupComponent = () => {
             <form onSubmit={formSubmitHandler}>
                 <div className='form-group'>
                     <label>First Name</label>
-                    <input 
+                    <input
                         type='text'
                         className='form-control'
                         placeholder='Enter your first name'

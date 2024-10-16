@@ -62,22 +62,10 @@ const LoginComponent = () => {
                 </div>
 
                 <div className='form-group text-left'>
-                    <div className='custom-checkbox custom-control text-left'>
-                        <input
-                            type='checkbox'
-                            className='custom-control-input'
-                            id='customCheck1'
-                        />
-                        <label className='custom-control-label' htmlFor='customCheck1'>
-                            Remember me?
-                        </label>
-                    </div>
+
                     <div className='d-grid'>
                         <button type='submit' className='btn btn-primary'>Submit</button>
                     </div>
-                    <p className='forgot-password'>
-                        <a href='#'>Forgot Password?</a>
-                    </p>
                     <p >
                         New User? <Link to='/signup'>Register here!</Link>
                     </p>

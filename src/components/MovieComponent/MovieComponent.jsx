@@ -26,11 +26,14 @@ const MovieComponent = ({ movieItem }) => {
     }
   };
 
+  console.log(movieItem.movieImage);
+
+
   return (
     <div className="card">
       <div className="text-container">
+        <img className='card-image' src={`http://localhost:3500/uploads/${movieItem.movieImage}`} alt={movieItem.movieName} />
         <h3>{movieItem.movieName}</h3>
-        <img src={movieItem.posterUrl} alt={`${movieItem.movieName} Poster`} className="movie-poster" />
         <p className="year">({movieItem.movieYear})</p>
         <p className="rating-label">IMDb Rating: <span className="rating">{movieItem.imdbRating}/10</span></p>
         <p className="genre">

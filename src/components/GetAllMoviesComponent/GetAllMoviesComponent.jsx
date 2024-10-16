@@ -13,7 +13,7 @@ const GetAllMoviesComponent = () => {
             .get('http://localhost:3500/api/v1/movie/')
             .then(response => {
                 setMovies(response.data);
-                setFilteredMovies(response.data); 
+                setFilteredMovies(response.data);
             })
             .catch((error) => {
                 if (error.response) {

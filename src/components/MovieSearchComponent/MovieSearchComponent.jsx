@@ -24,7 +24,7 @@ const MovieSearchComponent = ({ movieItems, setFilteredMovies }) => {
 
     return (
         <div className="search-container">
-        
+
             <input
                 type="text"
                 placeholder="Search movies..."
@@ -32,7 +32,7 @@ const MovieSearchComponent = ({ movieItems, setFilteredMovies }) => {
                 onChange={handleSearchChange}
                 className="search-input"
             />
-           
+
         </div>
     );
 };

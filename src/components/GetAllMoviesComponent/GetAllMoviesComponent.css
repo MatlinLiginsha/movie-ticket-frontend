@@ -1,19 +1,16 @@
 body {
-  background-color: #d5d1d1;
+  background-color: #121212;
   font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
 .container {
-  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
 }
 
 h1 {
-  padding: 2.5rem 0;
-  color: #de1515;
+  padding: 2rem 0;
+  color: #ff8c00;
   font-size: 3rem;
   text-align: center;
   font-weight: bold;
@@ -24,25 +21,36 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
 }
 
 .card {
   width: 18%;
-  background: #ffffff;
-  border-radius: 8px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
   overflow: hidden;
-  margin: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(255, 140, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-bottom: 1px solid #ff8c00;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.3);
 }
 
 .loading {
-  background-color: #ffffff;
+  background-color: #1e1e1e;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -50,64 +58,120 @@ h1 {
 }
 
 .loading h3 {
-  color: #de1515;
+  color: #ff8c00;
   font-size: 3rem;
   font-weight: bold;
 }
 
 .text-container {
-  padding: 1rem;
-  color: #333;
-  font-size: 1rem;
+  padding: 12px;
+  color: #ffffff;
+  text-align: center;
 }
 
 .text-container h3 {
   font-size: 1.5rem;
-  color: #de1515;
+  color: #ff8c00;
   margin-bottom: 0.5rem;
 }
 
 .year,
 .genre {
-  margin-bottom: 0.5rem;
-  color: #555;
+  margin-bottom: 0.25rem;
+  color: #cccccc;
 }
 
 .rating-label {
-  color: #27271a;
+  color: #ffffff;
 }
 
 .rating {
-  color: #191339;
+  color: #ff8c00;
+  font-weight: bold;
+}
+
+.ticket-cost,
+.seats-available {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #ff8c00;
+}
+
+.seat-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.counter-button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  margin: 0 8px;
+  background-color: #ff8c00;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.counter-button:hover {
+  background-color: #e07b00;
+}
+
+.counter-button:active {
+  background-color: #c95b00;
+}
+
+.counter-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ff8c00;
+  border-radius: 8px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group select:focus {
+  border-color: #de1515;
+  background-color: #3a3a3a;
 }
 
 button {
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  margin: 1rem 0.5rem 0 0;
-  background-color: #de1515;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  margin: 0.8rem 0.4rem 0 0;
+  background-color: #ff8c00;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #bf1313;
+  background-color: #e07b00;
 }
 
 button:active {
-  background-color: #a91010;
+  background-color: #c95b00;
 }
 
-a {
-  color: #de1515;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+.submit-button {
+  width: 80%;
+  text-align: center;
 }
 
 .search-container-wrapper {
@@ -115,4 +179,34 @@ a:hover {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 70%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter-button {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+  }
+
+  .card {
+    width: 100%;
+  }
 }
