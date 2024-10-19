@@ -32,7 +32,7 @@ const MovieComponent = ({ movieItem }) => {
   return (
     <div className="card">
       <div className="text-container">
-        <img className='card-image' src={`http://localhost:3500/uploads/${movieItem.movieImage}`} alt={movieItem.movieName} />
+        <img className='card-image' src={`https://movie-ticket-backend-lyart.vercel.app/uploads/${movieItem.movieImage}`} alt={movieItem.movieName} />
         <h3>{movieItem.movieName}</h3>
         <p className="year">({movieItem.movieYear})</p>
         <p className="rating-label">IMDb Rating: <span className="rating">{movieItem.imdbRating}/10</span></p>

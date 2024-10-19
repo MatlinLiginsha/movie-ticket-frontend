@@ -69,7 +69,7 @@ const AddNewMovieComponent = () => {
     formData.append('movieImage', movieInfo.movieImage);
 
     axios
-      .post('http://localhost:3500/api/v1/movie/addMovie', formData, {
+      .post('https://movie-ticket-backend-lyart.vercel.app/api/v1/movie/addMovie', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

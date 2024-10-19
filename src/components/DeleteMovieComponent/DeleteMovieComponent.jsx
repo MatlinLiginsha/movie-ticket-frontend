@@ -12,7 +12,7 @@ const DeleteMovieComponent = () => {
     const handleDelete = () => {
         if (movieId) {
             axios
-                .delete(`http://localhost:3500/api/v1/movie/${movieId}`)
+                .delete(`https://movie-ticket-backend-lyart.vercel.app/api/v1/movie/${movieId}`)
                 .then((response) => {
                     alert(`${movieName} has been deleted successfully.`);
                     window.location.href = '/';
@@ -32,7 +32,7 @@ const DeleteMovieComponent = () => {
     const fetchMovieDetails = () => {
         if (movieId) {
             axios
-                .get(`http://localhost:3500/api/v1/movie/${movieId}`)
+                .get(`https://movie-ticket-backend-lyart.vercel.app/api/v1/movie/${movieId}`)
                 .then((response) => {
                     const movie = response.data;
                     setMovieName(movie.movieName);

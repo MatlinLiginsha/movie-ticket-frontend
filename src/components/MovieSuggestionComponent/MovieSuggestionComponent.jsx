@@ -33,7 +33,7 @@ const MovieSuggestionComponent = () => {
     event.preventDefault();
 
     axios
-      .post(`http://localhost:3500/api/v1/movie/suggest`, movieCriteria)
+      .post(`https://movie-ticket-backend-lyart.vercel.app/api/v1/movie/suggest`, movieCriteria)
       .then((response) => {
         if (response.data.length > 0) {
           setSuggestedMovies(response.data);

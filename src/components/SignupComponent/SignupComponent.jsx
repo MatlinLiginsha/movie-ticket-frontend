@@ -28,7 +28,7 @@ const SignupComponent = () => {
         event.preventDefault()
 
         axios
-            .post(`http://localhost:3500/api/v1/signup`, { firstName, lastName, email, password })
+            .post(`https://movie-ticket-backend-lyart.vercel.app/api/v1/signup`, { firstName, lastName, email, password })
             .then((response) => {
                 alert(`Successfully created account for ${response.data.firstName} ${response.data.lastName} !`)
                 window.location.href = '/'

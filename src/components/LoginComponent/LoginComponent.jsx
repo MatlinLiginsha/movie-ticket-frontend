@@ -19,7 +19,7 @@ const LoginComponent = () => {
         event.preventDefault()
 
         axios
-            .post(`http://localhost:3500/api/v1/login`,
+            .post(`https://movie-ticket-backend-lyart.vercel.app/api/v1/login`,
                 { email: email, password: password })
             .then((response) => {
                 if (response.status === 201) {

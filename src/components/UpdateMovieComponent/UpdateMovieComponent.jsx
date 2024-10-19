@@ -25,7 +25,7 @@ const UpdateMovieComponent = () => {
         const { id } = movieInfo;
         if (id) {
             axios
-                .get(`http://localhost:3500/api/v1/movie/${id}`)
+                .get(`https://movie-ticket-backend-lyart.vercel.app/api/v1/movie/${id}`)
                 .then((response) => {
                     const movie = response.data;
                     setMovieInfo({
@@ -52,7 +52,7 @@ const UpdateMovieComponent = () => {
         const { id, movieName, movieYear, movieGenre1, movieGenre2, imdbRating, movieTicketCost, seatsAvailable } = movieInfo;
 
         axios
-            .put(`http://localhost:3500/api/v1/movie/${id}`, {
+            .put(`https://movie-ticket-backend-lyart.vercel.app/api/v1/movie/${id}`, {
                 movieName,
                 movieYear,
                 movieGenre1,

@@ -10,7 +10,7 @@ const GetAllMoviesComponent = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3500/api/v1/movie/')
+            .get('https://movie-ticket-backend-lyart.vercel.app/api/v1/movie/')
             .then(response => {
                 setMovies(response.data);
                 setFilteredMovies(response.data);
